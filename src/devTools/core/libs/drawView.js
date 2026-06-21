@@ -26,7 +26,7 @@ function init(options, devTools) {
     min: { x: 0, y: sysInfo.statusBarHeight, },
     max: {
       x: sysInfo.screenWidth - 70,
-      y: sysInfo.screenHeight - 24,
+      y: sysInfo.screenHeight - 24 - sysInfo.statusBarHeight,
     }
   }
 
