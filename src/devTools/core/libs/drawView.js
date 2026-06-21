@@ -124,6 +124,7 @@ function init(options, devTools) {
   })
 
   uni.setStorageSync("devTools_tagConfig", tagConfig)
+  return view
 
 }
 

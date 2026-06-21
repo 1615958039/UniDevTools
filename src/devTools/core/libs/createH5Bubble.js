@@ -136,6 +136,7 @@ function createH5Bubble(options, devTools) {
   document.addEventListener("mouseup", touchEnd)
 
   localStorage.setItem("devTools_tagConfig", JSON.stringify(tagConfig))
+  return tag
 }
 
 

@@ -62,13 +62,13 @@ const devTools = {
 
       //!混入生命周期监听器
       vm.mixin(vueMixin)
-
+      let bubbleView
       //!绘制环境变量小标签
       // #ifdef APP-PLUS
-      drawView(options, devTools)
+      bubbleView = drawView(options, devTools)
       // #endif
       // #ifdef H5
-      createH5Bubble(options, devTools)
+      bubbleView = createH5Bubble(options, devTools)
       // #endif
 
       //!调试工具全局拦截器挂载
@@ -91,6 +91,22 @@ const devTools = {
         },
         hide() {
           _this.hide()
+        },
+        showBubble(){
+          // #ifdef APP-PLUS
+          bubbleView?.show()
+          // #endif
+          // #ifdef H5
+          bubbleView.style.display = "flex";
+          // #endif
+        },
+        hideBubble(){
+          // #ifdef APP-PLUS
+          bubbleView?.hide()
+          // #endif
+          // #ifdef H5
+          bubbleView.style.display = "none";
+          // #endif
         },
         errorReport,
         logReport,

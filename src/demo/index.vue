@@ -75,6 +75,22 @@
             size="small"
             :round="20"
           ></tm-button>
+          <tm-button
+            label="打开Dev气泡"
+            @click="openBubble"
+            :width="220"
+            color="blue"
+            size="small"
+            :round="20"
+          ></tm-button>
+          <tm-button
+            label="关闭Dev气泡"
+            @click="closeBubble"
+            :width="220"
+            color="blue"
+            size="small"
+            :round="20"
+          ></tm-button>
         </view>
       </template>
     </tm-card>
@@ -298,6 +314,20 @@ function tips(data = "") {
 function open() {
   // @ts-ignore
   uni.$dev.show();
+}
+/**
+ * 打开调试气泡
+ */
+function openBubble() {
+  // @ts-ignore
+  uni.$dev.showBubble();
+}
+/**
+ * 关闭调试气泡
+ */
+function closeBubble() {
+  // @ts-ignore
+  uni.$dev.hideBubble();
 }
 
 /**
